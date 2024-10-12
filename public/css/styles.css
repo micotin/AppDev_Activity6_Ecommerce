@@ -1,0 +1,449 @@
+/* General Styling */
+.container {
+    max-width: 1200px;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+}
+
+.hero {
+    background-image: url('/images/bg.png'); /* Add a flower-themed background */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.hero span {
+    color: #ff9694; /* Soft pastel pink */
+}
+
+.hero .btn {
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+}
+
+.hero .btn:hover {
+    background-color: #4a148c;
+}
+
+/* Flower Decoration Section */
+.flower-decoration {
+    background-color: #fffaf0;
+    padding: 50px 0;
+}
+
+.flower-decoration .section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    margin-bottom: 30px;
+}
+
+.flower-container {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #6a1b9a;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff0f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.flower-container:hover {
+    transform: scale(1.1);
+}
+
+.flower-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .flower-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flower-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+/* Featured Products */
+.featured-products .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.featured-products .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-products .card-body {
+    background-color: #fff0f5; /* Light lavender background for card body */
+}
+
+.featured-products .btn {
+    background-color: #f7cac9;
+    border: none;
+    color: #fff;
+}
+
+.featured-products .btn:hover {
+    background-color: #6a1b9a;
+}
+
+/* Testimonials */
+.testimonials .testimonial {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.testimonials .testimonial-text {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonials .testimonial-author {
+    margin-top: 10px;
+    color: #6a1b9a;
+}
+
+/* Visit Us Section */
+.visit-us {
+    background-color: #f7cac9;
+    color: white;
+    padding: 50px 0;
+}
+
+.visit-us p {
+    font-size: 1.2rem;
+}
+
+.visit-us .btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+.visit-us .btn:hover {
+    background-color: #fff;
+    color: #6a1b9a;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #f7cac9, #92a8d1);
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav-link {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #4a148c;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 5px 15px;
+    margin-right: 10px;
+}
+
+.search-form .btn-search {
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.search-form .btn-search:hover {
+    background-color: #4a148c;
+}
+
+/* Header Background Image */
+header::before {
+    content: '';
+    background-image: url('/images/flower-background.png'); /* Flower-themed background */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-top: 20px;
+    }
+    
+    .brand-name {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* Main Container */
+main {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* Flowery Background */
+main::before {
+    content: '';
+    background-image: url('/images/flowers-background.jpg'); /* Add a floral background */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+/* Buttons */
+button {
+    background-color: #ffcccb;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+}
+
+button:hover {
+    background-color: #ff9a9a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #f7cac9; /* Pastel pink background */
+    color: #333;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-title {
+    color: #6a1b9a; /* Purple title color */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+.footer-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    color: #6a1b9a;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #4a148c; /* Darker purple for hover effect */
+    text-decoration: underline;
+}
+
+/* Floral Divider */
+.floral-divider {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.floral-divider img {
+    max-width: 200px; /* Adjust size */
+    opacity: 0.8;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: rgba(106, 27, 154, 0.1); /* Light transparent purple */
+    color: #333;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .footer-description, .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-description, .footer-link {
+        font-size: 0.8rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem;
+    }
+
+    .floral-divider img {
+        max-width: 150px; /* Smaller size for mobile */
+    }
+}
+
+
+/* Product Page Styling */
+.product-page {
+    background-color: #f0faff; /* Soft light blue background to complement the rest of the site */
+    padding: 50px 0;
+}
+
+.product-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #4a148c; /* Dark purple color to complement the main theme */
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #6a1b9a; /* Keeping the flower shop purple for price emphasis */
+    margin-bottom: 30px;
+}
+
+.product-image-container {
+    background-color: #e8f5e9; /* Soft green background to create a fresh contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #6a1b9a; /* Using consistent purple for buttons */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4a148c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .product-price {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container mt-4">
+        <h1><%= title %></h1>
+        <% if (cartItems.length === 0) { %>
+            <p>Your cart is empty.</p>
+        <% } else { %>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cartItems.forEach(item => { %>
+                        <tr>
+                            <td><%= item.name %></td>
+                            <td>$<%= typeof item.price === 'number' ? item.price.toFixed(2) : '0.00' %></td>
+                            <td>
+                                <form action="/cart/update" method="POST" class="d-inline">
+                                    <input type="hidden" name="productId" value="<%= item.id %>">
+                                    <input type="number" name="quantity" value="<%= item.quantity %>" min="1" class="form-control d-inline-block" style="width: 60px;">
+                                    <button type="submit" class="btn btn-sm btn-secondary">Update</button>
+                                </form>
+                            </td>
+                            <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+                            <td>
+                                <form action="/cart/remove" method="POST" class="d-inline">
+                                    <input type="hidden" name="productId" value="<%= item.id %>">
+                                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td><strong>$<%= total.toFixed(2) %></strong></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="text-end">
+                <a href="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+            </div>
+        <% } %>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

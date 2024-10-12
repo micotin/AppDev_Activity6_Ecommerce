@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container mt-4">
+        <!-- Hero Section -->
+        <section class="hero text-center">
+            <div class="hero-content">
+                <h1 class="display-4">Welcome to <span>Sam1 Flower Shop</span></h1>
+                <p class="lead">Where beauty blooms and fairytales come to life.</p>
+                <a href="/products" class="btn btn-primary btn-lg">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products mt-5">
+            <h2 class="text-center section-title">Featured Products</h2>
+            <div class="row">
+                <% products.forEach(function(product) { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="<%= product.image_url %>" class="card-img-top" alt="<%= product.name %>">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><%= product.name %></h5>
+                                <p class="card-text">$<%= product.price.toFixed(2) %></p> <!-- Make sure product.price is a number -->
+                                <a href="/products/<%= product.id %>" class="btn btn-outline-primary">View Details</a>
+                            </div>                            
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials mt-5">
+            <h2 class="text-center section-title">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"The flowers are absolutely stunning! I felt like I was in a fairytale."</p>
+                        <h6 class="testimonial-author">- Alice F.</h6>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Beautiful arrangements, vibrant colors, and fantastic customer service!"</p>
+                        <h6 class="testimonial-author">- Mark S.</h6>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"I absolutely love the whimsical touch of their flower designs. Magical!"</p>
+                        <h6 class="testimonial-author">- Emma W.</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visit Us Section -->
+        <section class="visit-us text-center mt-5">
+            <h2 class="section-title">Come Visit Us</h2>
+            <p>We’re located at 123 Flower Street, Blossom City. Step into our garden and experience the magic!</p>
+            <a href="/contact" class="btn btn-outline-success">Get Directions</a>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
